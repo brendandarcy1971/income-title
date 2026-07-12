@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-07-12T01:05:55.063712+00:00",
+  "root": "/workspace/income-title",
+  "records": {
+    "12": {
+      "script": "automation/generate_slide_12.py",
+      "generated_at": "2026-07-12T01:05:54.320937+00:00"
+    },
+    "13": {
+      "script": "automation/generate_slide_13.py",
+      "generated_at": "2026-07-12T01:05:54.700064+00:00"
+    },
+    "14": {
+      "script": "automation/generate_slide_14.py",
+      "generated_at": "2026-07-12T01:05:55.063403+00:00"
+    }
+  }
+}
