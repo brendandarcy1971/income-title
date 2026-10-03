@@ -7,6 +7,7 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+import shutil
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -20,13 +21,17 @@ SCRIPT_MAP = {
     "03-1": "generate_slide_03_1_march_replay.py",
     "04": "generate_slide_04.py",
     "04-1": "generate_slide_04_1_glossary.py",
+    "07": "generate_slide_07.py",
     "06-07": "generate_slides_06_07.py",
     "08": "generate_slide_08.py",
     "09": "generate_slide_09.py",
     "10": "generate_slide_10.py",
+    "11": "generate_slide_11.py",
+    "111": "generate_slide_11.py",
     "12": "generate_slide_12.py",
     "13": "generate_slide_13.py",
     "14": "generate_slide_14.py",
+    "20": "generate_slide_20.py",
 }
 
 OUTPUT_MAP = {
@@ -34,13 +39,21 @@ OUTPUT_MAP = {
     "03-1": "outputs/decks/slide-03-1-march-replay.deck.pptx",
     "04": "outputs/decks/slide-04.deck.pptx",
     "04-1": "outputs/decks/slide-04-1-glossary.deck.pptx",
+    "07": "outputs/decks/slide-07.deck.pptx",
     "06-07": "outputs/decks/slides-06-07.deck.pptx",
     "08": "outputs/decks/slide-08.deck.pptx",
     "09": "outputs/decks/slide-09.deck.pptx",
     "10": "outputs/decks/slide-10.deck.pptx",
+    "11": "outputs/decks/slide-11.deck.pptx",
+    "111": "outputs/decks/slide-111.deck.pptx",
     "12": "outputs/decks/slide-12.deck.pptx",
     "13": "outputs/decks/slide-13.deck.pptx",
     "14": "outputs/decks/slide-14.deck.pptx",
+    "20": "outputs/decks/slide-20.deck.pptx",
+}
+
+ALIAS_SOURCE_OUTPUT = {
+    "111": "outputs/decks/slide-11.deck.pptx",
 }
 
 
@@ -49,7 +62,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "slides",
         nargs="*",
-        help="Slide IDs to build, for example: 03 03-1 04 04-1 06-07 08 09 10 12 13 14. Defaults to all.",
+        help="Slide IDs to build, for example: 03 03-1 04 04-1 07 06-07 08 09 10 11 111 12 13 14 20. Defaults to all.",
     )
     parser.add_argument(
         "--clean",
@@ -94,6 +107,17 @@ def run_script(script_name: str) -> dict[str, str]:
     }
 
 
+def ensure_output_alias(root: Path, slide_id: str, expected_output: str):
+    expected = root / expected_output
+    source_rel = ALIAS_SOURCE_OUTPUT.get(slide_id)
+    if not source_rel:
+        return
+    source = root / source_rel
+    if source.exists():
+        expected.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, expected)
+
+
 def write_manifest(records: dict[str, dict[str, str]]) -> None:
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
     payload = {
@@ -118,6 +142,7 @@ def main() -> None:
     manifest_records: dict[str, dict[str, str]] = {}
     for slide_id in selection:
         manifest_records[slide_id] = run_script(SCRIPT_MAP[slide_id])
+        ensure_output_alias(ROOT, slide_id, OUTPUT_MAP[slide_id])
         output_path = OUTPUT_MAP.get(slide_id, "(output path not registered)")
         print(f"Built slide {slide_id} -> {output_path}")
 

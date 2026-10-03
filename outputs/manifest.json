@@ -1,18 +1,14 @@
 {
-  "generated_at": "2026-07-12T01:05:55.063712+00:00",
+  "generated_at": "2026-08-06T11:00:15.763506+00:00",
   "root": "/workspace/income-title",
   "records": {
-    "12": {
-      "script": "automation/generate_slide_12.py",
-      "generated_at": "2026-07-12T01:05:54.320937+00:00"
+    "07": {
+      "script": "automation/generate_slide_07.py",
+      "generated_at": "2026-08-06T11:00:04.298535+00:00"
     },
-    "13": {
-      "script": "automation/generate_slide_13.py",
-      "generated_at": "2026-07-12T01:05:54.700064+00:00"
-    },
-    "14": {
-      "script": "automation/generate_slide_14.py",
-      "generated_at": "2026-07-12T01:05:55.063403+00:00"
+    "20": {
+      "script": "automation/generate_slide_20.py",
+      "generated_at": "2026-08-06T11:00:15.763255+00:00"
     }
   }
 }

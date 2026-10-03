@@ -49,6 +49,16 @@ def draw_waterfall_chart(slide, left, top, width, height):
     add_shape(slide, 1, left, top, width, height, RGBColor(241, 244, 247), RGBColor(220, 225, 230))
     add_text(slide, left + 0.15, top + 0.05, 4.8, 0.25, "Waterfall: cost formation per dwelling", size=11, bold=True, color=SUB)
     add_text(slide, left + 4.5, top + 0.05, 3.2, 0.25, "Range: $600k to $1.0m", size=10, bold=True, color=SUB)
+    add_text(
+        slide,
+        left + 0.15,
+        top + 0.27,
+        width - 0.3,
+        0.16,
+        "Rezoning/scarcity uplift = value jump from non-urban land to approval-ready lots when serviced-lot supply is constrained.",
+        size=8,
+        color=SUB,
+    )
 
     labels = [
         "Raw\nland",
@@ -189,8 +199,8 @@ def main():
     add_text(slide, 8.9, 4.92, 3.8, 0.2, "Insights", size=10, bold=True, color=SUB)
     bullets = [
         "Construction is largest, but not the only price driver.",
-        "Raw land is small; uplift happens later in the pipeline.",
-        "Land transformation, infra, and compliance create major uplift.",
+        "Raw land is small; value lifts after planning conversion.",
+        "Rezoning uplift reflects approvals limits + delay risk + scarcity.",
         "Max-lend norms can support inflated pricing toward debt limits.",
     ]
     y = 5.12
@@ -227,6 +237,7 @@ def main():
         "The left chart uses a waterfall to show cumulative price formation from raw land through delivery layers to final price. In outer major-city areas, the final price can sit in a 600,000 to 1,000,000 range.\n\n"
         "Under each bar, ranges show how the same category scales across that 600,000 to 1,000,000 market band.\n\n"
         "Land-system and delivery layers create large uplift before the keys are handed over: land transformation, infrastructure, compliance, and risk-loaded margins.\n\n"
+        "In this slide, rezoning/scarcity uplift means the planning-conversion premium: the value jump between raw land and approval-ready land, amplified when only limited serviced lots are released and when approval delays add carrying risk.\n\n"
         "On the right, the mortgage-capacity panel shows the financing anchor. For a household on 120,000 with a 40,000 deposit and a 5x lending multiple, maximum borrowing capacity is 600,000, but this scenario holds purchase price at 600,000.\n\n"
         "At 6% over 30 years, the required 560,000 loan implies repayments of about 3,358 per month, or about 33.6% of gross income.\n\n"
         "So margins and embedded costs do not just reflect technical delivery input costs. They can expand toward available finance.\n\n"

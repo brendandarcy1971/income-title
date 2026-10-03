@@ -12,6 +12,12 @@ After this slide, the audience should accept three points:
 - Land transformation and policy settings create large price uplifts.
 - Lending capacity acts as a price ceiling signal that market participants price toward.
 
+## Clarification: Rezoning and Scarcity Uplift
+- Definition: the planning-conversion premium between raw land value and approval-ready land value.
+- Mechanism: uplift increases when zoned/serviced lots are released slowly relative to demand.
+- Pipeline effect: long approval and servicing timelines add carrying risk that gets priced into lot values.
+- Framing guardrail: present as a system-level scarcity effect, not as pure builder margin.
+
 ## 2-Minute Narrative Arc
 - 0:00-0:30: Open with the misconception: build cost alone explains affordability.
 - 0:30-1:15: Show the cost build-up using a waterfall from raw land to final market price.
@@ -33,6 +39,10 @@ Why this works:
 
 ## Evidence Inputs (from project research)
 Use ranges from new_home_development.txt and convert to one illustrative scenario for plotting.
+
+External evidence framing to strengthen narrative:
+- Grattan (2025) reports restrictive planning controls constrain feasible supply in established demand-heavy areas and can materially increase housing costs.
+- Use this as supporting context for why rezoning/scarcity uplift is structurally persistent.
 
 Reference ranges already in project notes:
 - Land share often 40-60% of total.
@@ -74,6 +84,7 @@ Interpretation line under chart:
 ## Speaker Notes (2 minutes)
 - We often treat construction cost as the main housing problem. The data says otherwise.
 - The biggest jumps happen through land transformation, infrastructure, policy and compliance layers, then through market pricing behavior.
+- Here, rezoning/scarcity uplift means the value jump from non-urban land to approval-ready land when serviced-lot supply is constrained and approval pathways are slow.
 - Lending rules and borrowing norms push households toward maximum feasible debt. That creates a hard-to-ignore pricing anchor for sellers and developers.
 - In that environment, margins and embedded costs can expand toward available finance, not just fundamental input costs.
 - This is why reform must target system economics, not just build efficiency.
